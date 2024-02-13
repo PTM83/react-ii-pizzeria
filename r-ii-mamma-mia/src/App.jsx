@@ -4,11 +4,13 @@ import { NavbarPizzeria } from '../src/component/NavbarPizzeria.jsx'
 import { Home } from '../src/views/Home.jsx'
 import { Description } from '../src/views/Description.jsx'
 import { Resume } from '../src/views/Resume.jsx'
+//Css
+import './App.css'
 
 export const App = () => {
     return (
-        <main>
-            <h1>Mamma Mia</h1>
+        <section className='container'>
+            <NavbarPizzeria />
 
             <Routes>
                 <Route path='/' element={ <Home /> } />
@@ -16,6 +18,6 @@ export const App = () => {
                 <Route path='/orders' element={ <Resume /> } />
             </Routes>
 
-        </main>
+        </section>
     )
 }

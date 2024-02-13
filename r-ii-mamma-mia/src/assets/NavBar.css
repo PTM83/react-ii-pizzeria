@@ -1,2 +1,32 @@
 /*pizza '\1F355'*/
 /*trolley '\1F6D2'*/
+
+.container-navigation {
+    background-color:dodgerBlue;
+    height:3rem;
+    padding: 0 4rem;
+    color: var(--colorFont);
+}
+
+.list-navBar {
+    height:100%;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.list-navBar li {
+    list-style: none;
+    font-size:1.3rem;
+}
+
+.list-navBar li:first-child::Before {
+    content:'\1F355';
+}
+
+.list-navBar li:last-child::Before {
+    content:'\1F6D2';
+}
+
