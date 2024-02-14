@@ -1,0 +1,96 @@
+.main-card {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap:2rem;
+
+   padding:0 4rem;
+}
+
+.card-container {
+    display:flex;
+    flex-direction:column;
+
+    width: 16rem;
+    border: 1px solid black;
+    border-radius:0.25rem;
+}
+
+.pizza-image img {
+    width:100%;
+    border-radius:0.25rem 0.25rem 0 0;
+}
+
+.article-card {
+    border-bottom: 3px solid #333333;
+}
+
+.article-card .pizzeria-header {
+    font-size:1.6rem;
+    font-weight:700;
+    text-transform:capitalize;
+    border-bottom: 3px solid #333333;
+    margin:0 1rem;
+}
+
+.article-card .pizzeria-header h1 {
+    padding:0.6rem 0;
+    width:100%;
+}
+
+.article-card h3 {
+    padding:0.6rem 1rem;
+    font-weight:600;
+}
+
+/*CHANGE LIST-STYLE-TYPE FROM A LIST*/
+@counter-style emoji {
+    symbols:"\1F355";
+    system: cyclic;
+    suffix: " ";
+}
+
+.article-card .list-card {
+    padding-left:3rem;
+    padding-bottom:1.5rem;
+    padding-top:0.25rem;
+}
+
+.article-card .list-card li {
+    list-style:emoji;
+    text-transform:capitalize;
+}
+
+.card-container h1 {
+    font-size:2rem;
+    margin:0 auto;
+    padding:0.7rem 0;
+}
+
+.button-container {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap: 0.5rem;
+    padding-bottom:1rem;
+    height:2rem;
+}
+
+.button-details, .button-add {
+    width:5rem;
+    border-radius: 0.25rem;
+    color: var(--colorFont);
+    font-weight:600;
+    border:none;
+}
+
+.button-details:hover, .button-add:hover {
+    color:green;
+}
+
+.button-details {
+    background-color:dodgerBlue;
+}
+
+.button-add {
+    background-color:red;
+}

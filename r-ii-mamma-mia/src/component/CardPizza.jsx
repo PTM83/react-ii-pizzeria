@@ -1,5 +1,8 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ContextPizzeria } from '../context/ContextPizzeria.jsx'
+//CSS
+import '../assets/CardPizzeria.css'
 
 //     "desc": "La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda. El término pizza napoletana, por su importancia histórica o regional, se emplea en algunas zonas como sinónimo de pizza tonda.",
 //     "id": "P001",
@@ -12,26 +15,51 @@ export const CardPizza = () => {
 
     const { infoPizzas } = useContext(ContextPizzeria);
 
+    const navigate = useNavigate();
+
+    //Capturar el ID primero
+//     const goToDetails = () => {
+//         if(!pizza.id) {
+//             return
+//         } else {
+//             navigate(`/description/${pizza.id}`)
+//         }
+//     }
+
+
     return (
-        <section>
+        <section className='main-card'>
             {infoPizzas && infoPizzas.map(pizza=>(
-            <div key={pizza.id}>
-                <picture>
+            <div key={pizza.id} className='card-container'>
+                <picture className='pizza-image'>
                     <img src={pizza.img} alt={pizza.name} />
                 </picture>
 
-                <article>
-                    <header>{pizza.name}</header>
-                    <h3>Ingredientes</h3>
+                <article className='article-card'>
+                    <header className='pizzeria-header'>
+                        <h1>{pizza.name}</h1>
+                    </header>
 
-                    <ul>
+                    <h3>Ingredientes:</h3>
+
+                    <ul className='list-card'>
                         {pizza.ingredients.map( (ingredient,index)=> (
                         <li key={index}> {ingredient} </li>
                         ))}
                     </ul>
-
-                    <h1>${pizza.price}</h1>
                 </article>
+
+                <h1>$ {pizza.price}</h1>
+
+                <section className='button-container'>
+                    <button className='button-details'>
+                        Details 👀
+                    </button>
+                    <button className='button-add'>
+                        Add 🛒
+                    </button>
+                </section>
+
             </div>
             ))}
 
