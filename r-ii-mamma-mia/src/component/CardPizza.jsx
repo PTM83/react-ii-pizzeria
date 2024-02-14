@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ContextPizzeria } from '../context/ContextPizzeria.jsx'
 //CSS
@@ -18,14 +18,13 @@ export const CardPizza = () => {
     const navigate = useNavigate();
 
     //Capturar el ID primero
-//     const goToDetails = () => {
-//         if(!pizza.id) {
-//             return
-//         } else {
-//             navigate(`/description/${pizza.id}`)
-//         }
-//     }
-
+    const goToDetails = (id) => {
+        if(!id){
+            return
+        } else {
+            navigate(`/description/${id}`);
+        }
+    }
 
     return (
         <section className='main-card'>
@@ -49,10 +48,10 @@ export const CardPizza = () => {
                     </ul>
                 </article>
 
-                <h1>$ {pizza.price}</h1>
+                <h1>$ {pizza.price.toLocaleString('es-ES')}</h1>
 
                 <section className='button-container'>
-                    <button className='button-details'>
+                    <button className='button-details' onClick={()=> goToDetails(pizza.id)}>
                         Details 👀
                     </button>
                     <button className='button-add'>
