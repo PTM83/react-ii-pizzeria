@@ -1,8 +1,11 @@
+import { TablePizza } from '../component/TablePizza.jsx'
 
 export const Resume = () => {
+
     return(
-        <main>
-            <h1>Resume Part</h1>
+        <main className='resume-Pizza'>
+            <h2>Detalles del pedido:</h2>
+            <TablePizza />
         </main>
     )
 }

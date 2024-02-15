@@ -28,7 +28,7 @@ export const CardPizza = () => {
 
     return (
         <section className='main-card'>
-            {infoPizzas && infoPizzas.map(pizza=>(
+            {infoPizzas ? infoPizzas.map(pizza=>(
             <div key={pizza.id} className='card-container'>
                 <picture className='pizza-image'>
                     <img src={pizza.img} alt={pizza.name} />
@@ -60,7 +60,7 @@ export const CardPizza = () => {
                 </section>
 
             </div>
-            ))}
+            )) : <h1>Loading Element</h1>}
 
         </section>
     )

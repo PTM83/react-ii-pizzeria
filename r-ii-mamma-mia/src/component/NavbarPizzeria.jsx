@@ -7,18 +7,22 @@ import '../assets/NavBar.css'
 
 export const NavbarPizzeria = () => {
 
-    const { count, totalPay } = useContext(ContextPizzeria)
+    const { totalPay } = useContext(ContextPizzeria)
     const navigate = useNavigate();
 
     const goToHome = () => {
         navigate('/')
     }
 
+    const goToPay = () => {
+        navigate('/orders')
+    }
+
     return(
         <nav className='container-navigation'>
             <ul className='list-navBar'>
                 <li onClick={goToHome}> Pizzería Mamma Mía! </li>
-                <li> ${totalPay} </li>
+                <li onClick={goToPay}> ${totalPay} </li>
             </ul>
         </nav>
     )

@@ -8,11 +8,18 @@ export const ContextPizzeria = createContext();
 
 export const PizzaProvider = ({children}) => {
 
-    const { count, toggleButton, totalPay } = useProductCount()
+    const { count, setCount, toggleButton, handleQuantityChange, totalPay } = useProductCount()
     const { infoPizzas } = hooksPizza()
 
     return (
-        <ContextPizzeria.Provider value={{ infoPizzas, count, toggleButton, totalPay }}>
+        <ContextPizzeria.Provider value={{
+                infoPizzas,
+                setCount,
+                count,
+                toggleButton,
+                handleQuantityChange,
+                totalPay
+                 }}>
             {children}
         </ContextPizzeria.Provider>
     )
