@@ -13,7 +13,7 @@ import '../assets/CardPizzeria.css'
 
 export const CardPizza = () => {
 
-    const { infoPizzas } = useContext(ContextPizzeria);
+    const { infoPizzas, toggleButton } = useContext(ContextPizzeria);
 
     const navigate = useNavigate();
 
@@ -54,7 +54,7 @@ export const CardPizza = () => {
                     <button className='button-details' onClick={()=> goToDetails(pizza.id)}>
                         Details 👀
                     </button>
-                    <button className='button-add'>
+                    <button onClick={()=> toggleButton(pizza.id, pizza.price)} className='button-add'>
                         Add 🛒
                     </button>
                 </section>

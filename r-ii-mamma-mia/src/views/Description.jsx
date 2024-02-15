@@ -7,7 +7,7 @@ import '../assets/DescriptionPizza.css'
 
 export const Description = () => {
 
-    const { infoPizzas } = useContext(ContextPizzeria);
+    const { infoPizzas, toggleButton } = useContext(ContextPizzeria);
     const { id } = useParams()
 
     const filterPizza = infoPizzas.filter(pizza => pizza.id === id)[0]
@@ -38,7 +38,7 @@ export const Description = () => {
                     </ul>
                     <footer className='footer-Description'>
                         <h2>Precio: ${price}</h2>
-                        <button className='button-add'>Add 🛒</button>
+                        <button onClick={()=>toggleButton(id, price)} className='button-add'>Add 🛒</button>
                     </footer>
                 </section>
             </article>
