@@ -1,85 +1,126 @@
-.resume-Pizza {
+.main-resume-Pizza {
     padding:0 4rem;
     height:100vh;
 
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:2rem;
-
-    --imageHeight:8rem;
-}
-
-.tablePizza{
-    border-collapse: collapse;
-    text-transform:capitalize;
-    width:50rem;
-
-    background: #ffffff;
-    border-radius: 4px;
-    box-shadow: 2px 2px 7px #aeb7b7;
-}
-
-.table-Image img {
-    width:100%;
-    height:var(--imageHeight);
-}
-
-tr { border-top: solid 1px #aeb7b7; }
-
-th, dt, td[data-name]::before {
-    color: #3a3a3a;
-    font-weight: 500;
-    font-size:1.5rem;
-    width:10rem;
-}
-
-dt::after {
-    content: ": ";
-}
-
-tbody td:nth-of-type(2),
- tfoot td {
-    font-weight: bold;
-    padding:0 2rem;
-    font-size:1.5rem;
-}
-
-tbody tr:nth-of-type(even) {
-    background: #f2fcfc;
-}
-
-.quantity-Pizza {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.quantity-Pizza input {
-    width:50%;
-    font-size:1.2rem;
-    text-align:right;
-    border-radius:0.25rem;
-}
-
-.pay-each-Pizza {
-    font-size:1.5rem;
-    padding:0 2rem;
-}
-
-.erase-container {
-    display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    height:var(--imageHeight);
-    padding:0 2rem;
+
+    & .div-header {
+        width:1072px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
 }
 
-.destructive {
-    border-color: #9d1616;
-    color: #9d1616;
-    border-radius: 50%;
-    padding:5px;
+.header-summary {
+    font-size:1.8rem;
+    text-align:left;
+    width:100%;
+    font-weight:700;
+    padding-bottom:1.5rem;
+}
+
+.tables-summary {
+    display:flex;
+    gap:2rem;
+}
+
+
+.tablePizza {
+    border-collapse: collapse;
+    width: 50rem; /* Ajusta según sea necesario */
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 7px #aeb7b7;
+    margin: auto; /* Centrar la tabla horizontalmente */
+}
+
+.tablePizza th, .tablePizza td {
+    text-align: left;
+    padding: 0.5rem; /* Ajustar según sea necesario */
+}
+
+.tablePizza .table-Image img {
+    width: 8rem; /* Ancho fijo para todas las imágenes */
+    height: 8rem; /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    border-radius: 4px; /* Si quieres bordes redondeados */
+}
+
+.tablePizza .quantity-Pizza {
+    text-align: center; /* Alineación del texto y del input */
+}
+
+.tablePizza .quantity-Pizza input {
+    width: 3rem; /* Ancho fijo para los inputs */
+    margin: 0 auto; /* Centra el input en la celda */
+    text-align: center;
+}
+
+.tablePizza .pay-each-Pizza {
+    text-align: right; /* Alinea el total a la derecha */
+}
+
+.tablePizza .erase-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*SUMMARY PIZZA*/
+.summary-container {
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 7px #aeb7b7;
+    padding:1rem;
+    width:15rem;
+    box-sizing:border-box;
+}
+
+.row-description {
+    display:flex;
+    font-size:1.2rem;
+    text-align:left;
+    padding-bottom:1rem;
+
+    & dt {
+        font-size:1.3rem;
+        width:100%;
+    }
+}
+
+.summary-number {
+    width:100%;
+    text-align:right;
+}
+
+.actions {
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    align-items:center;
+    padding-top:2rem;
+}
+
+.resume-button {
+    height:3rem;
+    width:100%;
+    border-radius:0.25rem;
+    font-size:1.1rem;
+}
+
+.button-primary {
+    border-color: #2c6c69;
+    background: #2c6c69;
+    color: #ffffff;
+}
+
+.button-secondary {
+    border-color: #2c6c69;
+    color: #2c6c69;
     background-color:transparent;
 }

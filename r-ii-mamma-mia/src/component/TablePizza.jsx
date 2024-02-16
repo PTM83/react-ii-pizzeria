@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ContextPizzeria } from '../context/ContextPizzeria.jsx';
 import { useResumeData } from '../hooks/useResumeData.js';
 
@@ -8,10 +8,18 @@ export const TablePizza = () => {
     const { totalPay, count, setCount, handleQuantityChange } = useContext(ContextPizzeria)
     const resumeData = useResumeData();
 
+    const toggleErase = (id) => {
+        setCount((count)=>{
+            const {[id]: valueToDiscard, ...remainingCount} = count
+            return remainingCount;
+        });
+    }
+
+
     return (
         <table className='tablePizza'>
             <thead>
-                <tr>
+                <tr className='tr-head-footer'>
                     <th>Image</th>
                     <th>Name</th>
                     <th>Quatity</th>
@@ -21,7 +29,7 @@ export const TablePizza = () => {
             </thead>
             <tbody>
                 {resumeData && resumeData.map(order =>(
-                <tr key={order.id}>
+                <tr className='tr-tbody' key={order.id}>
                     <td>
                         <picture className='table-Image'>
                             <img src={order.img} alt={order.name}/>
@@ -41,7 +49,7 @@ export const TablePizza = () => {
                     <td className='pay-each-Pizza'>$ {count[order.id]?.total || 0}</td>
 
                     <td className='erase-container'>
-                        <button type="button" className="destructive">
+                        <button type="button" className="destructive" onClick={()=> toggleErase(order.id)}>
                           <img width="24" height="24" src="https://raw.githubusercontent.com/michaelgearon/Tiny-CSS-Projects/main/chapter-08/after/img/icons/remove.svg" alt={order.name} />
                         </button>
                     </td>
@@ -51,7 +59,7 @@ export const TablePizza = () => {
             </tbody>
 
             <tfoot className='footer-table'>
-                <tr>
+                <tr className='tr-head-footer'>
                 <th>Total: </th>
                     <td>$ {totalPay}</td>
                 </tr>

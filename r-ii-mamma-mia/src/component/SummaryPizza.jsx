@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ContextPizzeria } from '../context/ContextPizzeria.jsx';
 import { getDataObject } from '../services/getDataFunction.js'
 
@@ -6,30 +7,43 @@ export const SummaryPizza = () => {
 
     const { totalPay, count } = useContext(ContextPizzeria)
 
-    const totalPizza = getDataObject(count, 'count')
-    console.log(count, totalPizza)
+    const navigate = useNavigate();
 
-//     const totalProduct = count.reduce((total, pizza)=>total + pizza.count ,0)
+    const goToHome = () => {
+        navigate('/')
+    }
+
+    const totalPizza = getDataObject(count, 'count')
 
     return(
         <section className="summary-container">
-            <dl>
-              <dt>Number of Items</dt>
-              <dd id="itemQty">
-                {totalPizza}
-              </dd>
+            <header className='header-summary'>Summary</header>
+            <dl className='description-summary'>
 
-              <dt>Order Total</dt>
-              <dd id="orderTotal">
-                $ {totalPay}
-              </dd>
+              <div className='row-description'>
+                  <dt>Number of Items</dt>
+                  <dd className='summary-number'>
+                    {totalPizza}
+                  </dd>
+              </div>
 
-              <dt>Total</dt>
-              <dd id="grandTotal"></dd>
+              <div className='row-description'>
+                  <dt>Order Total</dt>
+                  <dd className='summary-number'>
+                    $ {totalPay}
+                  </dd>
+              </div>
+
             </dl>
+
             <div className="actions">
-              <a href="#" className="button primary">Proceed to Checkout</a>
-              <a href="#" className="button secondary">Continue Shopping</a>
+              <button className="resume-button button-primary">
+                Proceed to Checkout
+              </button>
+
+              <button className="resume-button button-secondary" onClick={goToHome}>
+                Continue Shopping
+              </button>
             </div>
 
         </section>
