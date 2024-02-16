@@ -1,0 +1,85 @@
+.resume-Pizza {
+    padding:0 4rem;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+
+    --imageHeight:8rem;
+}
+
+.tablePizza{
+    border-collapse: collapse;
+    text-transform:capitalize;
+    width:50rem;
+
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 7px #aeb7b7;
+}
+
+.table-Image img {
+    width:100%;
+    height:var(--imageHeight);
+}
+
+tr { border-top: solid 1px #aeb7b7; }
+
+th, dt, td[data-name]::before {
+    color: #3a3a3a;
+    font-weight: 500;
+    font-size:1.5rem;
+    width:10rem;
+}
+
+dt::after {
+    content: ": ";
+}
+
+tbody td:nth-of-type(2),
+ tfoot td {
+    font-weight: bold;
+    padding:0 2rem;
+    font-size:1.5rem;
+}
+
+tbody tr:nth-of-type(even) {
+    background: #f2fcfc;
+}
+
+.quantity-Pizza {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.quantity-Pizza input {
+    width:50%;
+    font-size:1.2rem;
+    text-align:right;
+    border-radius:0.25rem;
+}
+
+.pay-each-Pizza {
+    font-size:1.5rem;
+    padding:0 2rem;
+}
+
+.erase-container {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:var(--imageHeight);
+    padding:0 2rem;
+}
+
+.destructive {
+    border-color: #9d1616;
+    color: #9d1616;
+    border-radius: 50%;
+    padding:5px;
+    background-color:transparent;
+}

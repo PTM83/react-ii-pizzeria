@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { getDataObject } from '../services/getDataFunction.js'
 
 export const useProductCount = () => {
     const [count, setCount] = useState({})
@@ -19,9 +20,7 @@ export const useProductCount = () => {
              }));
     };
     useEffect(()=>{
-        //    const idPizza = Object.keys(count) //<--Here I have id of each Pizza
-        const valuePizza = Object.values(count) //<--Data of each id Pizza Selected
-        const newTotalPay = valuePizza.reduce((totalSum, valuePizza)=> totalSum + valuePizza.total,0)
+        const newTotalPay = getDataObject(count, 'total')
         setTotalPay(newTotalPay)
     },[count]);
 
