@@ -27,15 +27,25 @@ export const useProductCount = () => {
     //Función que permite setear Count en la vista Resume
     const handleQuantityChange = (id, newQuantity, price) => {
 
-        setCount(prevCount => ({
-            ...prevCount,
-            [id]: {
-                ...prevCount[id],
-                count: newQuantity, // Update the count based on the new quantity
-                total: newQuantity*price, //Update the count based on Final payment
-                // Remember to adjust this if your state structure differs
-            },
-        }));
+        setCount((prevCount) => {
+
+            if (newQuantity === 0) {
+
+                const { [id]: valueToDiscard, ...remainingCount } = prevCount
+
+                return remainingCount
+
+            }
+            return {
+                ...prevCount,
+                [id]: {
+                    ...prevCount[id],
+                    count: newQuantity, // Update the count based on the new quantity
+                    total: newQuantity*price, //Update the count based on Final payment
+                    // Remember to adjust this if your state structure differs
+                },
+            };
+        });
     };
 
     return { count, setCount, toggleButton, handleQuantityChange, totalPay };

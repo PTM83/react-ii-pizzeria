@@ -1,7 +1,8 @@
 * {
     padding:0;
     margin:0;
-    --colorFont: rgba(255,247,248,.8)
+    font-family:system-ui;
+    --colorFont: rgba(255,247,248,.8);
 }
 
 .container {

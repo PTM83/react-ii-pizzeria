@@ -11,3 +11,4 @@ export const getDataObject = (object, value)=> {
     },0)
     return valueData;
 }
+

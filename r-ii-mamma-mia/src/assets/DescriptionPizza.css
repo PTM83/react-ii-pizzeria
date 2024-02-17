@@ -1,12 +1,12 @@
 .main-Description {
-    padding:2rem;
+    padding:4rem;
 }
 
 .card-Description {
     display:flex;
     flex-direction:row;
     gap:1rem;
-    border: 1px solid black;
+    box-shadow: 2px 2px 7px #aeb7b7;
     border-radius:0.25rem;
 }
 

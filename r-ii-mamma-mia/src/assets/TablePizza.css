@@ -1,10 +1,10 @@
 .main-resume-Pizza {
-    padding:0 4rem;
+    padding:4rem;
     height:100vh;
 
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
 
     & .div-header {
@@ -29,40 +29,45 @@
     gap:2rem;
 }
 
-
 .tablePizza {
     border-collapse: collapse;
     width: 50rem; /* Ajusta según sea necesario */
     background: #ffffff;
     border-radius: 4px;
     box-shadow: 2px 2px 7px #aeb7b7;
-    margin: auto; /* Centrar la tabla horizontalmente */
 }
 
+tr { border-top: solid 1px #aeb7b7; }
+
 .tablePizza th, .tablePizza td {
+    text-transform:capitalize;
+    font-weight:500;
+    font-size:1.3rem;
     text-align: left;
     padding: 0.5rem; /* Ajustar según sea necesario */
 }
 
 .tablePizza .table-Image img {
-    width: 8rem; /* Ancho fijo para todas las imágenes */
+    width: 95%; /* Ancho fijo para todas las imágenes */
     height: 8rem; /* Altura fija para todas las imágenes */
     object-fit: cover;
-    border-radius: 4px; /* Si quieres bordes redondeados */
+    border-radius: 0.25rem; /* Si quieres bordes redondeados */
 }
 
 .tablePizza .quantity-Pizza {
-    text-align: center; /* Alineación del texto y del input */
+    text-align: left; /* Alineación del texto y del input */
 }
 
 .tablePizza .quantity-Pizza input {
     width: 3rem; /* Ancho fijo para los inputs */
     margin: 0 auto; /* Centra el input en la celda */
-    text-align: center;
+    text-align: right;
+    font-size:1rem;
+    border-radius: 0.25rem;
 }
 
 .tablePizza .pay-each-Pizza {
-    text-align: right; /* Alinea el total a la derecha */
+    text-align: left; /* Alinea el total a la derecha */
 }
 
 .tablePizza .erase-container button {

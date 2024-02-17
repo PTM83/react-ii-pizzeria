@@ -16,7 +16,7 @@ export const Description = () => {
 
     return(
         <main className='main-Description'>
-            <h2>{id}</h2>
+
             <article className='card-Description'>
                 <picture className='pizza-image'>
                     <img src={img} alt={name}/>

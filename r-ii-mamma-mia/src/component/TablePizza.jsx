@@ -10,19 +10,18 @@ export const TablePizza = () => {
 
     const toggleErase = (id) => {
         setCount((count)=>{
-            const {[id]: valueToDiscard, ...remainingCount} = count
+            const {[id]: valueToDiscard, ...remainingCount} = count;
             return remainingCount;
         });
     }
-
 
     return (
         <table className='tablePizza'>
             <thead>
                 <tr className='tr-head-footer'>
-                    <th>Image</th>
+                    <th>Product</th>
                     <th>Name</th>
-                    <th>Quatity</th>
+                    <th>Quantity</th>
                     <th>Total</th>
                     <th>Erase</th>
                 </tr>
